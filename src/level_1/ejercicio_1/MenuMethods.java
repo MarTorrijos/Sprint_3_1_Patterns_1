@@ -1,9 +1,7 @@
 package level_1.ejercicio_1;
 
-import level_1.ejercicio_1.utils.KeyboardInput;
 import level_1.ejercicio_1.utils.Undo;
 
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class MenuMethods {

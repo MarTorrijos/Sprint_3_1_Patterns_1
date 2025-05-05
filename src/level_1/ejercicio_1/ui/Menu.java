@@ -10,34 +10,28 @@ public class Menu {
     private Scanner scanner = new Scanner(System.in);
     MenuMethods menuMethods = new MenuMethods();
 
-    public void Menu() {
-        try {
+    public void menu() {
+        do {
+            try {
+                viewMenu();
+                String input = scanner.nextLine();
+                int selection = Integer.parseInt(input);
+                MenuOptions selectedOption = MenuOptions.values()[selection - 1];
 
-            do {
-                try {
-                    viewMenu();
-
-                    int selection = scanner.nextInt();
-                    scanner.nextLine();
-                    MenuOptions selectedOption = MenuOptions.values()[selection - 1];
-
-                    switch (selectedOption) {
-                        case INPUT_COMMAND -> menuMethods.addCommand();
-                        case DELETE_COMMAND -> menuMethods.deleteCommand();
-                        case LIST_COMMAND -> menuMethods.listCommand();
-                        case EXIT -> {
-                            return;
-                        }
+                switch (selectedOption) {
+                    case INPUT_COMMAND -> menuMethods.addCommand();
+                    case DELETE_COMMAND -> menuMethods.deleteCommand();
+                    case LIST_COMMAND -> menuMethods.listCommand();
+                    case EXIT -> {
+                        return;
                     }
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    System.err.println("Error: El número introducido es incorrecto");
                 }
-            } while (true);
-
-        } finally {
-            scanner.close();
-        }
-
+            } catch (NumberFormatException e) {
+                System.err.println("Error: Debes introducir un número");
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.err.println("Error: El input debe ser un número del 1 al 4");
+            }
+        } while (true);
     }
 
     public static void viewMenu() {
