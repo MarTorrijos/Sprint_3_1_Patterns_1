@@ -1,7 +1,6 @@
-package level_1.ejercicio_1.ui;
+package level_1.ejercicio_1.application;
 
 import level_1.ejercicio_1.enums.MenuOptions;
-import level_1.ejercicio_1.MenuMethods;
 
 import java.util.Scanner;
 

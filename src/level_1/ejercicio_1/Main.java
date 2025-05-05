@@ -1,6 +1,6 @@
 package level_1.ejercicio_1;
 
-import level_1.ejercicio_1.ui.Menu;
+import level_1.ejercicio_1.application.Menu;
 
 public class Main {
 

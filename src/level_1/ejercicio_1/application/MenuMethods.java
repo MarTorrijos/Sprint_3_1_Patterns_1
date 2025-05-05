@@ -1,4 +1,4 @@
-package level_1.ejercicio_1;
+package level_1.ejercicio_1.application;
 
 import level_1.ejercicio_1.utils.Undo;
 
